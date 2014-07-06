@@ -1068,6 +1068,12 @@ function gallery_shortcode( $attr ) {
 					$image_output
 				</div>
 			</{$icontag}>";
+		
+		$output .= "
+			<div class='transition-graphic'>
+				<img src='http://ryan.fish/blog/wp-content/uploads/2014/07/scribble.png'></img>
+			</div>";
+
 		if ( $captiontag && trim($attachment->post_excerpt) ) {
 			$output .= "
 				<{$captiontag} class='wp-caption-text gallery-caption'>

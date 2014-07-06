@@ -378,11 +378,21 @@ img.wp-post-image {
 }
 .gallery-icon-container {
 	background-color:#FFFFFF;
-	transition: all 1s;
 }
-.gallery-icon-container:hover {
-	background-color:#333333;
-	transition: all 1s;
+#gallery-2 .transition-graphic {
+	position: relative;
+	top: 0px;
+	height: 5px;
+}
+#gallery-2 .transition-graphic img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border: medium none;
+	box-shadow: none;
+	height: 0px;
+	width: 90%;
+	transition: height 0.5s ease-in-out;
 }
 .gallery-caption {
 	font-size: 20px;
@@ -408,6 +418,9 @@ img.wp-smiley,
 }
 .gallery-item a {
 	display: block;
+}
+#gallery-2 .gallery-item:hover .transition-graphic img {
+	height: 10px;
 }
 .gallery-caption a {
 	display: inline;
