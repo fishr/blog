@@ -39,15 +39,15 @@
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div>
-			<div style="float: right" itemscope itemtype="http://schema.org/Person">
-				<div style = "float: left">
-					<img src="wp-content/uploads/2014/06/1402089_10153409638170150_619828717_o.jpg" itemprop="image" />
-				</div>
-				<div style = "float: right">
+			<div id = "header-schema-root" itemscope itemtype="http://schema.org/Person">
+				<div id = "header-schema-meta">
 					<p><span itemprop="name">Ryan Fish</span></p>
-					<p>Email: <span itemprop="email">fishr@mit.edu</span></p>
+					<p><span itemprop="email">fishr@mit.edu</span></p>
 					<p><span itemprop="jobTitle">Senior, Mechanical Engineering</span>, <span itemprop="affiliation">MIT</span></p>
-					<p><a href="https://plus.google.com/+RyanFishME?rel=author"> My Google+</a></p>
+					<p><a href="https://plus.google.com/+RyanFishME?rel=author"></a></p>
+				</div>
+				<div  id = "header-schema-meta-image" style = "float: right">
+					<img src="<?php echo home_url('/'); ?>wp-content/uploads/2014/06/1402089_10153409638170150_619828717_o.jpg" itemprop="image" />
 				</div>
 			</div>
 			<div style="clear: both;"></div>

@@ -17,7 +17,7 @@
 		<header class="entry-header">
 			<?php the_post_thumbnail(); ?>
 			<?php if ( is_single() ) : ?>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
+			<h1 class="entry-title"><?php the_title(); ?></h1><p id="header-date">Posted On: <?php echo get_the_date()?></p>
 			<?php else : ?>
 			<h1 class="entry-title">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
