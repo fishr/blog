@@ -843,7 +843,7 @@ function img_caption_shortcode( $attr, $content = null ) {
 		. do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $atts['caption'] . '</figcaption></figure>';
 	}
 
-	$caption_width = 10 + $atts['width'];
+	$caption_width = $atts['width'];
 
 	/**
 	 * Filter the width of an image's caption.

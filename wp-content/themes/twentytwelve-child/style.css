@@ -693,8 +693,8 @@ section[role="banner"] {
 	word-wrap: break-word;
 }
 .widget-area .widget h3 {
-	margin-bottom: 24px;
-	margin-bottom: 1.714285714rem;
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
 }
 .widget-area .widget p,
 .widget-area .widget li,
@@ -719,11 +719,11 @@ section[role="banner"] {
 .widget-area .widget a {
 	color: #757575;
 }
-.widget-area .widget a:hover {
-	color: #21759b;
-}
 .widget-area .widget a:visited {
 	color: #9f9f9f;
+}
+.widget-area .widget a:hover {
+	color: #21759b;
 }
 .widget-area #s {
 	width: 53.66666666666%; /* define a width to avoid dropping a wider submit button */
@@ -1535,7 +1535,7 @@ img#wpstats {
 	}
 	.site-content {
 		float: left;
-		width: 65.104166667%;
+		width: 70%;
 	}
 	body.template-front-page .site-content,
 	body.single-attachment .site-content,
