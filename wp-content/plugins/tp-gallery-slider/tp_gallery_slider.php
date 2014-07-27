@@ -426,7 +426,11 @@ $attachments = get_children( array('post_parent' => $post_id, 'post_status' => '
 			
 			$output .= '<img id="largeImage" alt="'.$first_value->post_title.'" caption="'.$first_value->post_excerpt.'" src="'.$big_image_src[0].'" width="'.$big_image_src[1].'" height="'.$big_image_src[2].'" />';
 			if($tp_display_alt == 'yes'){
-				$output .= '<div id="description">';
+				$dispStyle = 'block';
+				if($first_value->post_excerpt == ''){
+					$dispStyle = 'none';
+				}
+				$output .= '<div id="description" style="display: '.$dispStyle.';">';
 					$output .= $first_value->post_excerpt;
 				$output .= '</div>';//description
 			}//$tp_display_alt == 'yes'
