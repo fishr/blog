@@ -1062,17 +1062,27 @@ function gallery_shortcode( $attr ) {
 
 		$output .= "<{$itemtag} class='gallery-item'>";
 
+		$flareChoices = array(
+			0=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh1.png",
+			1=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh2.png",
+                        2=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh3.png",
+                        3=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh4.png",
+                        4=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh5.png",
+                        5=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh6-e1407309045437.png",
+                        6=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh.png",
+                        7=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh7.png",
+		);
+
 		$output .= "
 			<{$icontag} class='gallery-icon-container'> 
+				<div class='transition-graphic'>
+					<img src={$flareChoices[rand(0,7)]}></img>
+				</div>
 				<div class='gallery-icon {$orientation}'>
 					$image_output
 				</div>
 			</{$icontag}>";
 		
-		$output .= "
-			<div class='transition-graphic'>
-				<img src='http://ryan.fish/blog/wp-content/uploads/2014/07/scribble.png'></img>
-			</div>";
 
 		if ( $captiontag && trim($attachment->post_excerpt) ) {
 			$output .= "
