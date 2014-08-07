@@ -436,7 +436,13 @@ img.wp-post-image {
 	font-size: 1.2rem;
 	line-height: 2;
 	color: #333333;
+	width: 90%;
+}
+#gallery-2 .gallery-caption{
 	transition: color 0.5s ease-in-out;
+	position: relative;
+	z-index: 3;
+	background: rgba(255,255,255,0.1);
 }
 #gallery-4 .transition-graphic{
 	width: 0px;
@@ -472,9 +478,6 @@ img.wp-smiley,
 }
 .gallery-item a {
 	display: block;
-}
-.gallery-caption{
-	width: 90%;
 }
 #gallery-2 .gallery-icon-container:hover .transition-graphic img {
 	opacity: 0.5;
