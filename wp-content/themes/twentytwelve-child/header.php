@@ -18,9 +18,21 @@
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website# article: http://ogp.me/ns/article#">
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
+<meta property="fb:app_id" content="284871435031619" />
+<?php 
+	if(is_page()){
+		echo "<meta property='og:type'   content='website' /> 
+  			<meta property='og:url'    content='http://ryan.fish/blog/' /> 
+  			<meta property='og:title'  content='The Caffeinated Fish' /> 
+  			<meta property='og:image'  content='http://ryan.fish/blog/wp-content/uploads/2014/08/project.jpg' />
+			<meta property='og:description' content='Tech, DIY, and if I have time, Photography' />";
+	}
+	/*$extrameta = get_post_meta(get_the_ID(), 'extra_meta', true); 
+	echo "$extrameta";*/
+?>
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -32,6 +44,16 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
@@ -47,7 +69,7 @@
 					<p><a href="https://plus.google.com/+RyanFishME?rel=author"></a></p>
 				</div>
 				<div  id = "header-schema-meta-image" style = "float: right">
-					<img src="<?php echo home_url('/'); ?>wp-content/uploads/2014/06/1402089_10153409638170150_619828717_o.jpg" itemprop="image" />
+					<img src="<?php echo home_url('/'); ?>wp-content/uploads/2014/06/ryan-fish-avatar.jpg" itemprop="image" />
 				</div>
 			</div>
 			<div style="clear: both;"></div>

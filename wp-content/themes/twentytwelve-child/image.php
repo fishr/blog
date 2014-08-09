@@ -18,24 +18,10 @@ get_header(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
 					<header class="entry-header">
-						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<h1 style="float: left" class="entry-title"><?php the_title(); ?></h1>
 
-						<footer class="entry-meta">
-							<?php
-								$metadata = wp_get_attachment_metadata();
-								printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>.', 'twentytwelve' ),
-									esc_attr( get_the_date( 'c' ) ),
-									esc_html( get_the_date() ),
-									esc_url( wp_get_attachment_url() ),
-									$metadata['width'],
-									$metadata['height'],
-									esc_url( get_permalink( $post->post_parent ) ),
-									esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ),
-									get_the_title( $post->post_parent )
-								);
-							?>
-							<?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
-						</footer><!-- .entry-meta -->
+						<div style="float:right" class="fb-like" data-layout="button" data-action="like" data-show-faces="false" data-share="true" data-colorscheme="dark"></div>
+						<div style="clear: both;"></div>
 
 						<nav id="image-navigation" class="navigation" role="navigation">
 							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'twentytwelve' ) ); ?></span>
@@ -94,6 +80,23 @@ endif;
 
 					</div><!-- .entry-content -->
 
+						
+						<footer class="entry-meta">
+							<?php
+								$metadata = wp_get_attachment_metadata();
+								printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>.', 'twentytwelve' ),
+									esc_attr( get_the_date( 'c' ) ),
+									esc_html( get_the_date() ),
+									esc_url( wp_get_attachment_url() ),
+									$metadata['width'],
+									$metadata['height'],
+									esc_url( get_permalink( $post->post_parent ) ),
+									esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ),
+									get_the_title( $post->post_parent )
+								);
+							?>
+							<?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
+						</footer><!-- .entry-meta -->
 				</article><!-- #post -->
 
 				<?php comments_template(); ?>
