@@ -29,6 +29,14 @@
   			<meta property='og:title'  content='The Caffeinated Fish' /> 
   			<meta property='og:image'  content='http://ryan.fish/blog/wp-content/uploads/2014/08/project.jpg' />
 			<meta property='og:description' content='Tech, DIY, and if I have time, Photography' />";
+	}else{
+		$thisposthopefully = get_post(get_the_ID());
+		$metaoutput = "<meta property='og:type'   content='article' /> 
+  			<meta property='og:url'    content=".esc_url(get_permalink(get_the_ID()))." /> 
+  			<meta property='og:title'  content="."'$thisposthopefully->post_title'"." />";
+		$metaoutput .=  "<meta property='og:image'  content='http://ryan.fish/blog/wp-content/uploads/2014/08/project.jpg' />
+			<meta property='og:description' content='Tech, DIY, and if I have time, Photography' />";
+		echo $metaoutput;
 	}
 	/*$extrameta = get_post_meta(get_the_ID(), 'extra_meta', true); 
 	echo "$extrameta";*/
@@ -36,6 +44,7 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="icon" type="image/x-icon" href="http://ryan.fish/blog/wp-content/uploads/2014/08/favicon.ico"/>
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
