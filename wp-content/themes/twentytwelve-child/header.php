@@ -55,8 +55,10 @@
 
 		$metaoutput = "<meta property='og:type'   content='article' /> 
   			<meta property='og:url'    content=".esc_url(get_permalink(get_the_ID()))." /> 
-  			<meta property='og:title'  content="."'$thisposthopefully->post_title'"." />";
+  			<meta property='og:title'  content=".str_replace(" ", "&#x0020;", $thisposthopefully->post_title)." />";
 		$metaoutput .=  "<meta property='og:image'  content=".esc_url($imageSrc[0])." />
+                        <meta property='og:image:width' content="."'$imageSrc[1]'"." />
+                        <meta property='og:image:height' content="."'$imageSrc[2]'"." />
 			<meta property='og:description' content='Tech, DIY, and if I have time, Photography' />";
 		echo $metaoutput;
 	}
