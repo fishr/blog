@@ -27,14 +27,36 @@
 		echo "<meta property='og:type'   content='website' /> 
   			<meta property='og:url'    content='http://ryan.fish/blog/' /> 
   			<meta property='og:title'  content='The Caffeinated Fish' /> 
-  			<meta property='og:image'  content='http://ryan.fish/blog/wp-content/uploads/2014/08/project.jpg' />
+  			<meta property='og:image'  content='http://ryan.fish/blog/wp-content/uploads/2013/09/blicycle-outside.jpg' />
 			<meta property='og:description' content='Tech, DIY, and if I have time, Photography' />";
 	}else{
 		$thisposthopefully = get_post(get_the_ID());
+
+
+                //intended to get the page image for use with Facebook previews
+                $imageSrc="";
+		$args = array(
+                        'numberposts' => 1,
+                        'order'=> 'ASC',
+                        'post_mime_type' => 'image',
+                        'post_parent' => get_the_ID(),
+                        'post_status' => null,
+                        'post_type' => 'attachment'
+                        );
+                //get the first image and resize it 
+                $attachments = get_children( $args );
+
+                if ($attachments) {
+                        foreach($attachments as $attachment) {
+                                $imageSrc=wp_get_attachment_image_src( $attachment->ID, 'full' );
+                        }
+                }
+//end image get
+
 		$metaoutput = "<meta property='og:type'   content='article' /> 
   			<meta property='og:url'    content=".esc_url(get_permalink(get_the_ID()))." /> 
   			<meta property='og:title'  content="."'$thisposthopefully->post_title'"." />";
-		$metaoutput .=  "<meta property='og:image'  content='http://ryan.fish/blog/wp-content/uploads/2014/08/project.jpg' />
+		$metaoutput .=  "<meta property='og:image'  content=".esc_url($imageSrc[0])." />
 			<meta property='og:description' content='Tech, DIY, and if I have time, Photography' />";
 		echo $metaoutput;
 	}
