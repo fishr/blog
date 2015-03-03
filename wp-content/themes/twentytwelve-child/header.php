@@ -73,7 +73,7 @@
 			<div id = "header-schema-root" itemscope itemtype="http://schema.org/Person">
 				<div id = "header-schema-meta">
 					<p><span itemprop="name">Ryan Fish</span></p>
-					<p><span itemprop="email">fishr@mit.edu</span></p>
+					<p><a href="mailto:fishr@mit.edu"><span itemprop="email">fishr@mit.edu</span></a></p>
 					<p><span itemprop="jobTitle">Senior, Mechanical Engineering</span>, <span itemprop="affiliation">MIT</span></p>
 					<p><a href="https://plus.google.com/+RyanFishME?rel=author"></a></p>
 				</div>
