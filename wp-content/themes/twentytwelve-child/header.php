@@ -28,6 +28,8 @@
   			<meta property='og:url'    content='http://ryan.fish/blog/' /> 
   			<meta property='og:title'  content='The Caffeinated Fish' /> 
   			<meta property='og:image'  content='http://ryan.fish/blog/wp-content/uploads/2013/09/blicycle-outside.jpg' />
+                        <meta property='og:image:width' content='1600' />
+                        <meta property='og:image:height' content='1200' />
 			<meta property='og:description' content='Tech, DIY, and if I have time, Photography' />";
 	}else{
 		$thisposthopefully = get_post(get_the_ID());
