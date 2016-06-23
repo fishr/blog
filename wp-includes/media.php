@@ -1734,10 +1734,33 @@ function gallery_shortcode( $attr ) {
 			$orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
 		}
 		$output .= "<{$itemtag} class='gallery-item'>";
+
+/********************** BEGIN MOUSEOVER IMAGE REGION *******************************/
+		$flareChoices = array(
+			0=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh1-e1407381114421.png",
+			1=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh2-e1407381113656.png",
+			2=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh3-e1407381109897.png",
+			3=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh4-e1407381068129.png",
+			4=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh5-e1407380868170.png",
+			5=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh6-e1407309045437.png",
+			6=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh-e1407381120635.png",
+			7=>"http://ryan.fish/blog/wp-content/uploads/2014/08/bokeh7-e1407381119544.png",
+		);
+
 		$output .= "
-			<{$icontag} class='gallery-icon {$orientation}'>
-				$image_output
-			</{$icontag}>";
+			<{$icontag}  class='gallery-icon-container'>
+				<div class='transition-graphic'>
+					<img src={$flareChoices[rand(0,7)]}></img>
+				</div>
+				<div class='gallery-icon {$orientation}'>
+					$image_output
+				</div>
+ 			</{$icontag}>";
+
+/**********************END MOUSEOVER IMAGE REGION *******************************/
+
+
+
 		if ( $captiontag && trim($attachment->post_excerpt) ) {
 			$output .= "
 				<{$captiontag} class='wp-caption-text gallery-caption' id='$selector-$id'>
