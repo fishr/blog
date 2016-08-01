@@ -100,7 +100,7 @@
 				<div id = "header-schema-meta">
 					<p><span itemprop="name">Ryan Fish</span></p>
 					<p><a href="mailto:fishr@mit.edu"><span itemprop="email">fishr@mit.edu</span></a></p>
-					<p><span itemprop="jobTitle">Senior, Mechanical Engineering</span>, <span itemprop="affiliation">MIT</span></p>
+					<p><span itemprop="jobTitle">Master's Candidate, MechE</span>, <span itemprop="affiliation">MIT</span></p>
 					<p><a href="https://plus.google.com/+RyanFishME?rel=author"></a></p>
 				</div>
 				<div  id = "header-schema-meta-image" style = "float: right">
