@@ -58,10 +58,12 @@
 		$metaoutput = "<meta property='og:type'   content='article' /> 
   			<meta property='og:url'    content=".esc_url(get_permalink(get_the_ID()))." /> 
   			<meta property='og:title'  content=".str_replace(" ", "&#x0020;", $thisposthopefully->post_title)." />";
-		$metaoutput .=  "<meta property='og:image'  content=".esc_url($imageSrc[0])." />
-                        <meta property='og:image:width' content="."'$imageSrc[1]'"." />
-                        <meta property='og:image:height' content="."'$imageSrc[2]'"." />
-			<meta property='og:description' content='Tech, DIY, and if I have time, Photography' />";
+		if ($imageSrc[1]) {
+			$metaoutput .=  "<meta property='og:image'  content=".esc_url($imageSrc[0])." />
+                        	<meta property='og:image:width' content="."'$imageSrc[1]'"." />
+	                        <meta property='og:image:height' content="."'$imageSrc[2]'"." />
+				<meta property='og:description' content='Tech, DIY, and if I have time, Photography' />";
+		}
 		echo $metaoutput;
 	}
 	/*$extrameta = get_post_meta(get_the_ID(), 'extra_meta', true); 
@@ -101,7 +103,8 @@
 					<p><span itemprop="name">Ryan Fish</span></p>
 					<p><a href="mailto:fishr@mit.edu"><span itemprop="email">fishr@mit.edu</span></a></p>
 					<p><span itemprop="jobTitle">Master's Candidate, MechE</span>, <span itemprop="affiliation">MIT</span></p>
-					<p><a href="https://plus.google.com/+RyanFishME?rel=author"></a></p>
+					<p><a href="https://www.linkedin.com/pub/ryan-fish/71/5a6/45b">
+					<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_profile_greytxt_80x15.png" width="80" height="15" border="0" alt="View Ryan Fish's profile on LinkedIn"></a></p>
 				</div>
 				<div  id = "header-schema-meta-image" style = "float: right">
 					<img src="<?php echo home_url('/'); ?>wp-content/uploads/2014/06/ryan-fish-avatar.jpg" itemprop="image" />
