@@ -101,8 +101,8 @@
 			<div id = "header-schema-root" itemscope itemtype="http://schema.org/Person">
 				<div id = "header-schema-meta">
 					<p><span itemprop="name">Ryan Fish</span></p>
-					<p><a href="mailto:fishr@mit.edu"><span itemprop="email">fishr@mit.edu</span></a></p>
-					<p><span itemprop="jobTitle">Master's Candidate, MechE</span>, <span itemprop="affiliation">MIT</span></p>
+					<p><a href="mailto:ryanfishme+blog@gmail.com"><span itemprop="email">ryanfishme+blog@gmail.com</span></a></p>
+					<p><span itemprop="jobTitle">BS, MS in MechE</span>, <span itemprop="affiliation">MIT</span></p>
 					<p><a href="https://www.linkedin.com/pub/ryan-fish/71/5a6/45b">
 					<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_profile_greytxt_80x15.png" width="80" height="15" border="0" alt="View Ryan Fish's profile on LinkedIn"></a></p>
 				</div>
