@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional CV & Portfolio</title>
+    <style>
+        /* Modern Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Header / Contact Info */
+        header {
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #111;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* CV Entries */
+        h2 {
+            font-size: 1.5rem;
+            color: #222;
+            margin: 30px 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .cv-entry {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #eaeaea;
+        }
+        .cv-entry:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        .entry-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #111;
+        }
+        .entry-meta {
+            font-size: 0.9rem;
+            color: #777;
+            text-align: right;
+            white-space: nowrap;
+        }
+        .entry-description {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        ul.entry-description {
+            list-style: none; /* Removes standard black dots */
+            padding-left: 0;
+        }
+        ul.entry-description li {
+            position: relative;
+            padding-left: 20px; /* Space for the custom bullet */
+            margin-bottom: 6px;
+        }
+        ul.entry-description li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #b0b0b0; /* Light grey color */
+            font-weight: bold;
+        }
+
+        /* Responsive Video Embed Container */
+        .media-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            margin-top: 15px;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #000;
+        }
+        .media-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body { padding: 15px 10px; }
+            .container { padding: 20px; }
+            .entry-header { flex-direction: column; }
+            .entry-meta { text-align: left; margin-top: 4px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- Contact Header -->
+    <header>
+        <h1>Ryan Fish</h1>
+        <div class="contact-info">
+            <span>LinkedIn: <a href="https://linkedin.com/in/ryan-fish" target="_blank">linkedin.com/in/ryan-fish</a></span>
+            <span>GitHub: <a href="https://github.com/fishr" target="_blank">github.com/fishr</a></span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Publications Section -->
+        <h2>Publications</h2>
+
+        <div class="cv-entry">
+            <div class="entry-header">
+                <span class="entry-title"><a href="https://patents.google.com/patent/US12544145B2/el" target="_blank">Devices and Methods for Robotic Assemblies</a></span>
+                <span class="entry-meta">Patent Granted: US 12,544,145 В2<br>Feb 2026</span>
+            </div>
+            <ul class="entry-description">
+                <li></li>
+            </ul>
+        </div>
+        <div class="cv-entry">
+            <div class="entry-header">
+                <span class="entry-title"><a href="https://patents.google.com/patent/US11284947B2/el" target="_blank">Devices and Methods for Robotic Assemblies</a></span>
+                <span class="entry-meta">Patent Granted: US 11,284,947 B2<br>March 2022</span>
+            </div>
+            <ul class="entry-description">
+                <li>"Virtual Surgeon" comprised of a "head", left-, and right-arm that are all inserted through a single, minimum-sized incision.  See especially Figs 11-23 and 46.</li>
+                <li>"Virtual" diametric magnet for position sensing with smaller, distributed magnets. See especially Fig 32.</li>
+            </ul>
+        </div>
+
+
+        <!-- Experience Section -->
+        <h2>Experience</h2>
+
+        <!-- Entry 1 (Standard Text) -->
+        <div class="cv-entry">
+            <div class="entry-header">
+                <span class="entry-title">Staff Research Engineer / Technical Lead</span>
+                <span class="entry-meta">Boston, MA<br>March 2024 — May 2026</span>
+            </div>
+            <ul class="entry-description">
+                <li>Led integration of LLM-enabled enterprise search in org.  Iterated use cases for synthesizing requirements and other critical documentation to leverage large institutional dataset with missing SMEs.</li>
+                <li>Lead developer/designer on Instrument calibration fixture and associated software.  Designed novel kinematic profile for determining joint offsets with very low cross-coupling based on vision system tracking of end-effector.</li>
+                <li>Performed RCA on multiple critical issues, including leveraging E&M simulation in COMSOL to predict effective shielding thickness necessary to eliminate ferromagnetic saturation of a key sensor.</li>
+                <li>Led system requirements architecture for multiple high-impact features, including motion/dynamic performance of manipulators, reliability testing of disposable subsystems, and unintended tissue contact prevention.</li>
+            </ul>
+                
+            <!-- YouTube Embed Container -->
+            <div class="media-container">
+                <iframe
+                    width="560" height="315"
+                    src="https://www.youtube.com/embed/-XCJV9FBZNU?si=1zUZtwMrfk0W-rlC"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Entry 2 (With Embedded YouTube Video) -->
+        <div class="cv-entry">
+            <div class="entry-header">
+                <span class="entry-title">Senior Research Engineer / Technical Lead</span>
+                <span class="entry-meta">Remote<br>January 2021 — March 2024</span>
+            </div>
+            <ul class="entry-description">
+                <li>Led multi-disciplinary team on development of 8-DOF intra-abdominal manipulator arm. It was these hardware builds and demos that led to going public as RBOT.</li> 
+                <li>Worked with leadership to identify new product opportunities, developed business briefs with clinical input, and green-lit a proposed system extension product to enable a wide array of new instrumentation.  Designed and built electromechanical prototype to be used as proof-of-concept for initial user testing and user needs/system requirements development.</li>
+            </ul>
+        </div>
+
+        <!-- Education Section -->
+        <h2>Education</h2>
+        <div class="cv-entry">
+            <div class="entry-header">
+                <span class="entry-title">M.S. in Mechanical Engineering</span>
+                <span class="entry-meta">Massachusetts Institute of Technology<br>Graduated 2017</span>
+            </div>
+        </div>
+        <div class="cv-entry">
+            <div class="entry-header">
+                <span class="entry-title">B.S. in Engineering</span>
+                <span class="entry-meta">Massachusetts Institute of Technology<br>Graduated 2015</span>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>
