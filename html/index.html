@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional CV & Portfolio</title>
+    <title>Ryan Fish: Robotics and Mechatronics Professional</title>
+
     <style>
         /* Modern Reset & Base Styles */
         * {
@@ -19,12 +20,11 @@
             padding: 40px 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 1050px; /* Widened slightly to accommodate the sidebar */
             margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 220px 1fr; /* Sidebar is 220px, CV takes the rest */
+            gap: 40px;
         }
 
         /* Header / Contact Info */
@@ -51,6 +51,47 @@
         }
         .contact-info a:hover {
             text-decoration: underline;
+        }
+
+        /* Sidebar Styling */
+        aside {
+            position: sticky;
+            top: 40px; /* Keeps it locked to the top of the viewport when scrolling */
+            height: fit-content;
+            background: #fff;
+            padding: 20px;
+        }
+        .toc-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .toc-nav ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .toc-nav li {
+            margin-bottom: 12px;
+        }
+        .toc-nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+        .toc-nav a:hover {
+            color: #0066cc;
+        }
+
+        /* CV Main Content Wrapper */
+        .cv-content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         /* CV Entries */
@@ -129,21 +170,50 @@
             border: 0;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
+        /* Responsive Breakpoint for Mobile */
+        @media (max-width: 768px) {
             body { padding: 15px 10px; }
-            .container { padding: 20px; }
+            .container {
+                grid-template-columns: 1fr; /* Drops to a single column on mobile */
+                gap: 20px;
+            }
+            aside {
+                position: static; /* Removes the sticky effect on mobile */
+                border-bottom: 2px solid #eaeaea;
+                padding-bottom: 15px;
+            }
+            .toc-nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .toc-nav li {
+                margin-bottom: 0;
+            }
             .entry-header { flex-direction: column; }
             .entry-meta { text-align: left; margin-top: 4px; }
         }
+
     </style>
 </head>
 <body>
 
 <div class="container">
-    
+    <aside>
+        <div class="toc-title">Navigation</div>
+        <nav class="toc-nav">
+            <ul>
+                <li><a href="#socials">Contact/Socials</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="cv-content">
     <!-- Contact Header -->
-    <header>
+    <header id="socials">
         <h1>Ryan Fish</h1>
         <div class="contact-info">
             <span>LinkedIn: <a href="https://linkedin.com/in/ryan-fish" target="_blank">linkedin.com/in/ryan-fish</a></span>
@@ -153,7 +223,7 @@
 
     <main>
         <!-- Publications Section -->
-        <h2>Publications</h2>
+        <h2 id="publications">Publications</h2>
 
         <div class="cv-entry">
             <div class="entry-header">
@@ -161,7 +231,7 @@
                 <span class="entry-meta">Patent Granted: US 12,544,145 В2<br>Feb 2026</span>
             </div>
             <ul class="entry-description">
-                <li></li>
+                <li>"Virtual" diametric magnet for position sensing with smaller, distributed magnets. See especially Fig 32.</li>
             </ul>
         </div>
         <div class="cv-entry">
@@ -171,19 +241,41 @@
             </div>
             <ul class="entry-description">
                 <li>"Virtual Surgeon" comprised of a "head", left-, and right-arm that are all inserted through a single, minimum-sized incision.  See especially Figs 11-23 and 46.</li>
-                <li>"Virtual" diametric magnet for position sensing with smaller, distributed magnets. See especially Fig 32.</li>
+            </ul>
+        </div>
+        <div class="cv-entry">
+            <div class="entry-header">
+                <span class="entry-title"><a href="http://hdl.handle.net/1721.1/111697" target="_blank">A Real-Time Robotic Platform for Pipeline Inspection</a></span>
+                <span class="entry-meta">Advisor: Prof. Kamal Youcef-Toumi<br>June 2017</span>
+            </div>
+            <ul class="entry-description">
+                <li>Introduction of thrust-vectoring ailerons for non-holonomic 6DoF controllability</li>
+                <li>Design and Implementation of full control platform (logic, comms, power electronics, log storage) for self-contained, battery-powered operation.</li>
+                <li>Design and Implmentation of FreeRTOS-based application to manage real-time control, drive peripherals, and allow future work to implement mapping and other long-horizon tasks.</li>
+            </ul>
+        </div>
+        <div class="cv-entry">
+            <div class="entry-header">
+                <span class="entry-title"><a href="https://drive.google.com/file/d/1agWDhu8UsqXD6DN1qqsLtzgU5Fm_t1B6/view?usp=sharing" target="_blank">Blicycle: A Bicycle for the Blind</a></span>
+                <span class="entry-meta">Advisor: Prof. Seth Teller<br>April 2013<br>A Best Poster Presentation Winner!</span>
+            </div>
+            <ul class="entry-description">
+                <li>Designed new LIDAR sensing modality for improved obstacle detection.</li>
+                <li>Implemented LCM-based IPC for efficient communication between custom drivers, logic, and image processing.</li>
+                <li>Upgraded vision system to stereoscopic, global-shutter, forward facing cameras for predictive planning.</li>
+                <li>Implemented basic lane-detection and 2D motion model to improve human-in-the-loop navigation guidance.</li>
             </ul>
         </div>
 
 
-        <!-- Experience Section -->
-        <h2>Experience</h2>
 
-        <!-- Entry 1 (Standard Text) -->
+        <!-- Experience Section -->
+        <h2 id="experience">Experience</h2>
+
         <div class="cv-entry">
             <div class="entry-header">
                 <span class="entry-title">Staff Research Engineer / Technical Lead</span>
-                <span class="entry-meta">Boston, MA<br>March 2024 — May 2026</span>
+                <span class="entry-meta">Boston, MA<br>March 2024 — May 2026<br>Vicarious Surgical</span>
             </div>
             <ul class="entry-description">
                 <li>Led integration of LLM-enabled enterprise search in org.  Iterated use cases for synthesizing requirements and other critical documentation to leverage large institutional dataset with missing SMEs.</li>
@@ -192,7 +284,6 @@
                 <li>Led system requirements architecture for multiple high-impact features, including motion/dynamic performance of manipulators, reliability testing of disposable subsystems, and unintended tissue contact prevention.</li>
             </ul>
                 
-            <!-- YouTube Embed Container -->
             <div class="media-container">
                 <iframe
                     width="560" height="315"
@@ -204,24 +295,63 @@
             </div>
         </div>
 
-        <!-- Entry 2 (With Embedded YouTube Video) -->
         <div class="cv-entry">
             <div class="entry-header">
                 <span class="entry-title">Senior Research Engineer / Technical Lead</span>
-                <span class="entry-meta">Remote<br>January 2021 — March 2024</span>
+                <span class="entry-meta">Remote<br>January 2021 — March 2024<br>Vicarious Surgical</span>
             </div>
             <ul class="entry-description">
-                <li>Led multi-disciplinary team on development of 8-DOF intra-abdominal manipulator arm. It was these hardware builds and demos that led to going public as RBOT.</li> 
                 <li>Worked with leadership to identify new product opportunities, developed business briefs with clinical input, and green-lit a proposed system extension product to enable a wide array of new instrumentation.  Designed and built electromechanical prototype to be used as proof-of-concept for initial user testing and user needs/system requirements development.</li>
+                <li>Trialed novel manufacturing pipeline using nearly exclusively 3DP components to vastly accelerate part production compared with subtractive manufacturing techniques.  Although non-isotropic material properties stalled the 3DP manufacturing process, the new assembly methods and internal structures endured for conversion to molding processes.</li>
+            </ul>
+        </div>
+
+        <div class="cv-entry">
+            <div class="entry-header">
+                <span class="entry-title">Mechanical Engineer / Technical Lead</span>
+                <span class="entry-meta">Boston, MA<br>July 2017 — December 2020<br>Vicarious Surgical</span>
+            </div>
+            <ul class="entry-description">
+                <li>Led multi-disciplinary team on development of 8-DOF intra-abdominal manipulator arm. It was these hardware builds and demos that led to going public as RBOT.</li>
+                <li>Designed novel magnetic (Hall-effect) sensor arrangement to improve miniturization, strength, and motion-decoupling of "elbow" style joints. (US Pat. 12,544,145)</li>
+                <li>Reduced overall length of arm assembly from ~600mm to 200mm to enable use in a wide range of patient abdomens.</li>
+                <li>Developed novel interchangeable tip system with peers to address highest-cost system component.</li>
+            </ul>
+        </div>
+
+        <div class="cv-entry">
+            <div class="entry-header">
+                <span class="entry-title">Summer Intern - Human-Robot Interaction Developer</span>
+                <span class="entry-meta">Pasadena, CA<br>June 2014 — August 2014<br>Vicarious Surgical</span>
+            </div>
+            <ul class="entry-description">
+                <li>Designed interfaces to enable simple manipulation of real-world objects, for final deployment with Robonaut on the
+International Space Station.</li>
+                <li>Coded wrappers for dynamic modeling and control software to manipulate Kinova’s Jaco robotic arm.</li>
             </ul>
         </div>
 
         <!-- Education Section -->
-        <h2>Education</h2>
+        <h2 id="education">Education</h2>
         <div class="cv-entry">
             <div class="entry-header">
                 <span class="entry-title">M.S. in Mechanical Engineering</span>
                 <span class="entry-meta">Massachusetts Institute of Technology<br>Graduated 2017</span>
+            </div>
+            <ul class="entry-description">
+                <li>6.832: Underactuated Robotics - Fall 2015</li>
+                <li>2.737: Mechatronics - Fall 2016</li>
+                <li>2.131: Advanced Instrumentation and Measurement - Spring 2017</li>
+                <li>Lab TA for 2.12: Introduction to Robotics (see Department video below) - Fall 2016</li>
+            </ul>
+            <div class="media-container">
+                <iframe
+                    width="560" height="315"
+                    src="https://www.youtube.com/embed/pMGYtob7csQ?si=JjFwhgDHCduWyQur"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
             </div>
         </div>
         <div class="cv-entry">
@@ -229,8 +359,25 @@
                 <span class="entry-title">B.S. in Engineering</span>
                 <span class="entry-meta">Massachusetts Institute of Technology<br>Graduated 2015</span>
             </div>
+            <ul class="entry-description">
+                <li>16.35: Real-Time Systems and Software - Spring 2015</li>
+                <li>2.153: Adaptive Control - Spring 2015</li>
+                <li>2.151: Advanced System Dynamics & Control - Fall 2014</li>
+                <li>2.009: Product Engineering Processes (See final project video below - I worked on embedded design) - Fall 2014</li>
+            </ul>
+            <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe
+                    src="https://player.vimeo.com/video/231474834?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                    title="2014 Final Presentations: pink">
+                </iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
     </main>
+    </div>
 
 </div>
 
